@@ -4,6 +4,7 @@ import com.example.todospring.entity.Todo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class TodoService {
     private TodoRepository todoRepository;
 
     public List<Todo> findAllToDos() {
-        return todoRepository.findAll();
+        return (List<Todo>) todoRepository.findAll();
     }
     @Transactional
     public void addToDo(Todo todo){
