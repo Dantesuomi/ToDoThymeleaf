@@ -18,7 +18,7 @@
   <label>Owner:</label>
   <input type="text" name="owner">
   <label>Priority:</label>
-  <input type="number" name="priority">
+  <input type="text" name="priority">
   <button type="submit">Add</button>
 </form>
 
@@ -39,7 +39,7 @@
   </thead>
   <tbody>
   <!-- Iterate over todos and filter by description -->
-  <tr th:each="todo : ${todos}" th:if="${todo.description.contains(filterValue)}">
+  <tr th:each="todo : ${todos}">
     <td th:text="${todo.description}"></td>
     <td th:text="${todo.dueDate}"></td>
     <td th:text="${todo.status}"></td>

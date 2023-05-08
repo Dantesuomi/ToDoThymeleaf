@@ -4,21 +4,18 @@ import com.example.todospring.entity.Todo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class TodoService {
-    
+
     @Autowired
     private TodoRepository todoRepository;
 
     public List<Todo> findAllToDos() {
-        return (List<Todo>) todoRepository.findAll();
+        return todoRepository.findAll();
     }
     @Transactional
     public void addToDo(Todo todo){

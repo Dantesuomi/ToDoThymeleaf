@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -17,7 +19,7 @@ public class Todo {
     @GeneratedValue
     private Long id;
     private String description;
-    private Date dueDate;
+    private LocalDate dueDate;
     private TodoStatus status;
     private String owner;
     private Priority priority;
